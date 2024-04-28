@@ -422,3 +422,14 @@ MariaDB [dbpos_sib6]> select * from kartu;
 
 MariaDB [dbpos_sib6]> commit;
 Query OK, 0 rows affected (0.008 sec)
+
+No. 2
+LOCK TABLES READ digunakan saat kita perlu membaca data dari tabel tanpa khawatir adanya perubahan pada data 
+tersebut oleh transaksi lain. Contohnya, saat menjalankan laporan besar yang membutuhkan akses baca ke tabel, LOCK 
+TABLES READ akan memastikan data yang konsisten selama pembacaan.
+
+No.3
+LOCK TABLES WRITE digunakan saat kita ingin memastikan tidak ada transaksi lain yang mengakses atau mengubah data
+dalam tabel saat Anda melakukan operasi tulis seperti INSERT, UPDATE, atau DELETE. Misalnya, ketika menjalankan
+skrip yang melakukan pembaruan massal atau penghapusan data, LOCK TABLES WRITE akan menjaga eksklusivitas akses
+ke tabel agar tidak ada gangguan oleh transaksi lain.
